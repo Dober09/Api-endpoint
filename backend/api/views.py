@@ -18,9 +18,9 @@ def api_home(request,*args,**kwargs):
         "slack_name":f"{re['slack_name']}",
         "current_day":today,
         "uct_time":uct_time,
-        "track":"backend",
-        "github_file_url":"",
-        "github_repo_url":"",
+        "track":re['track'],
+        "github_file_url":"https://github.com/Dober09/Api-endpoint/blob/main/backend/api/views.py",
+        "github_repo_url":"https://github.com/Dober09/Api-endpoint",
         "status_code":200
     }
 
