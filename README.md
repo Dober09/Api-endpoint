@@ -8,3 +8,4 @@
 
 ### running project
 - python3 manage.py runserver 8000
+- on the browser **http://localhost:8000/api?slack_name=yourname&track="backend"
