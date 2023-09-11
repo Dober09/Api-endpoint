@@ -1,12 +1,12 @@
 from django.http import JsonResponse
-from django.utils import timezone
+from datetime import datetime,timezone
 import pytz
 
 
 
 
 def api_home(request,*args,**kwargs):
-    dt=timezone.now()
+    dt=datetime.now(timezone.utc)
     weekday = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
     today = weekday[dt.weekday()]
     re = request.GET
