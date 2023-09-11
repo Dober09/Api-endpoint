@@ -10,14 +10,13 @@ def api_home(request,*args,**kwargs):
     weekday = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
     today = weekday[dt.weekday()]
     re = request.GET
-    date_time = dt.strftime("%Y-%m-%d %H:%M:%S").split(" ")
-
-    uct_time = f"{date_time[0]}T{date_time[1]}Z"
+    date_time = dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+   
 
     response = {
         "slack_name":f"{re['slack_name']}",
         "current_day":today,
-        "uct_time":uct_time,
+        "uct_time":date_time,
         "track":re['track'],
         "github_file_url":"https://github.com/Dober09/Api-endpoint/blob/main/backend/api/views.py",
         "github_repo_url":"https://github.com/Dober09/Api-endpoint",
@@ -25,6 +24,6 @@ def api_home(request,*args,**kwargs):
     }
 
     # json_re = json.dumps(response)
-    print(uct_time)
+    # print(uct_time)
     
     return JsonResponse(response);
